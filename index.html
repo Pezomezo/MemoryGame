@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <title>Memory Game</title>
+
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <div class="modal-header">
+
+      <h2>YOU WIN</h2>
+    </div>
+    <div class="modal-body">
+      <span class="close">Retry</span>
+    </div>
+  </div>
+
+</div>
+
+<!-- Trigger/Open The Modal -->
+<button id="myBtn" class="myBtn">Open Modal</button>
+
+
+<section class="memory-game">
+  <div class="memory-card" data-framework="car">
+    <img class="front-face" src="img/Car-icon.png" alt="React">
+    <img class="back-face" src="img/meltingEarth.png" alt="Memory Card">
+  </div>
+
+  <div class="memory-card" data-framework="car">
+    <img class="front-face" src="img/Car-icon.png" alt="React">
+    <img class="back-face" src="img/meltingEarth.png" alt="Memory Card">
+  </div>
+
+  <div class="memory-card" data-framework="bear">
+    <img class="front-face" src="img/polarBear.jpeg" alt="Angular">
+    <img class="back-face" src="img/meltingEarth.png" alt="Memory Card">
+  </div>
+
+  <div class="memory-card" data-framework="bear">
+    <img class="front-face" src="img/polarBear.jpeg" alt="Angular">
+    <img class="back-face" src="img/meltingEarth.png" alt="Memory Card">
+  </div>
+
+  <div class="memory-card" data-framework="greta" >
+    <img class="front-face" src="img/greta.jpg" alt="Ember">
+    <img class="back-face" src="img/meltingEarth.png" alt="Memory Card">
+  </div>
+
+  <div class="memory-card" data-framework="greta">
+    <img class="front-face" src="img/greta.jpg" alt="Ember">
+    <img class="back-face" src="img/meltingEarth.png" alt="Memory Card">
+  </div>
+
+  <div class="memory-card" data-framework="ice">
+    <img class="front-face" src="img/meltingIceberg.png" alt="Vue">
+    <img class="back-face" src="img/meltingEarth.png" alt="Memory Card">
+  </div>
+
+  <div class="memory-card" data-framework="ice">
+    <img class="front-face" src="img/meltingIceberg.png" alt="Vue">
+    <img class="back-face" src="img/meltingEarth.png" alt="Memory Card">
+  </div>
+
+  <div class="memory-card" data-framework="ozon">
+    <img class="front-face" src="img/ozonLayer.png" alt="Backbone">
+    <img class="back-face" src="img/meltingEarth.png" alt="Memory Card">
+  </div>
+
+  <div class="memory-card" data-framework="ozon">
+    <img class="front-face" src="img/ozonLayer.png" alt="Backbone">
+    <img class="back-face" src="img/meltingEarth.png" alt="Memory Card">
+  </div>
+
+  <div class="memory-card" data-framework="gas">
+    <img class="front-face" src="img/manufacture.gif" alt="Aurelia">
+    <img class="back-face" src="img/meltingEarth.png" alt="Memory Card">
+  </div>
+
+  <div class="memory-card" data-framework="gas">
+    <img class="front-face" src="img/manufacture.gif" alt="Aurelia">
+    <img class="back-face" src="img/meltingEarth.png" alt="Memory Card">
+  </div>
+</section>
+
+  <script src="./gameLogic.js"></script>
+</body>
+</html>
