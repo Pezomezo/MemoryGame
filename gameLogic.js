@@ -49,16 +49,14 @@ function flipCard() {
 }
 
 function checkForMatch() {
-
+    const audio = new Audio('youwin.m4a');
     if (firstCard.dataset.framework === secondCard.dataset.framework) {
         disableCards();
-        var audio = new Audio('youwin.m4a');
         audio.play();
         winCheck++;
         console.log("So far: " + winCheck);
         if (winCheck === 6) {
 
-            var audio = new Audio('youwin.m4a');
             audio.play();
 
             clearInterval(intervalId);
@@ -73,6 +71,8 @@ function checkForMatch() {
 
     unflipCards();
 }
+
+
 
 function disableCards() {
     firstCard.removeEventListener('click', flipCard);
@@ -127,6 +127,15 @@ function incrementTime() {
 
 function saveGame() {
 
+// Data which will write in a file.
+    let data = "Learning how to write in a file.";
+
+// Write data in 'Output.txt' .
+    fs.writeFile('Output.txt', data, (err) => {
+
+        // In case of a error throw err.
+        if (err) throw err;
+    })
 }
 
 document.getElementById("back-face1").addEventListener("click", function () {
