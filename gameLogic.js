@@ -125,7 +125,9 @@ function incrementTime() {
         ":" + ("0" + (time % 60)).slice(-2);
 }
 
+function saveGame() {
 
+}
 
 document.getElementById("back-face1").addEventListener("click", function () {
     document.getElementById("clicksfx").play();
