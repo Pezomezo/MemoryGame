@@ -7,7 +7,7 @@
 body {
     height: 100vh;
     display: flex;
-    background: #9ea7b2;
+    background: #29658d;
 }
 
 .memory-game {
@@ -23,8 +23,14 @@ body {
     height: 640px;
     margin: auto;
     display: block;
-    background: darkcyan;
+    background: whitesmoke;
  }
+
+.side-bar-image {
+    width: 250px;
+    height: 598px;
+    margin: auto;
+}
 
 .front-face,
 .back-face {
@@ -33,7 +39,7 @@ body {
     padding: 20px;
     position: absolute;
     border-radius: 5px;
-    background: #1C7CCC;
+    background: rgb(98, 145, 182);
     backface-visibility: hidden;
 }
 
@@ -129,7 +135,7 @@ body {
 
 .modal-header {
     padding: 2px 16px;
-    background-color: #5cb85c;
+    background-color: #0074a3;
     color: white;
 }
 
@@ -137,7 +143,7 @@ body {
 
 .modal-footer {
     padding: 2px 16px;
-    background-color: #5cb85c;
+    background-color: #0074a3;
     color: white;
 }
 
