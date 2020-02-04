@@ -14,12 +14,20 @@ const span = document.getElementsByClassName("close")[0];
 let hasFlippedCard = false;
 let lockBoard = false;
 let winCheck = 0;
+let time, intervalId;
 let firstCard, secondCard;
+let firstCardFlipped = false;
 
 //comment
 
 function flipCard() {
+    if (!firstCardFlipped) {
+        time = -1;
+        incrementTime();
+        intervalId = setInterval(incrementTime, 1000);
 
+        firstCardFlipped = true;
+    }
     if (lockBoard) {
         return;
     }
@@ -51,8 +59,14 @@ function checkForMatch() {
         winCheck++;
         console.log("So far: " + winCheck);
         if (winCheck === 6) {
+
             var audio = new Audio('youwin.m4a');
             audio.play();
+
+            clearInterval(intervalId);
+            document.getElementById("resultDiv").textContent =
+                document.getElementById("time").textContent;
+
             btn.click();
             return;
         }
@@ -104,5 +118,14 @@ span.onclick = function() {
     modal.style.display = "none";
     location.reload();
 };
+
+
+//Stop Watch logic
+function incrementTime() {
+    time++;
+    document.getElementById("time").textContent =
+        ("0" + Math.trunc(time / 60)).slice(-2) +
+        ":" + ("0" + (time % 60)).slice(-2);
+}
 
 cards.forEach(card => card.addEventListener('click', flipCard));
