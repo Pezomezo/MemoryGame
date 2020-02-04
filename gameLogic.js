@@ -18,8 +18,6 @@ let time, intervalId;
 let firstCard, secondCard;
 let firstCardFlipped = false;
 
-//comment
-
 function flipCard() {
     if (!firstCardFlipped) {
         time = -1;
@@ -76,7 +74,6 @@ function checkForMatch() {
     unflipCards();
 }
 
-
 function disableCards() {
     firstCard.removeEventListener('click', flipCard);
     secondCard.removeEventListener('click', flipCard);
@@ -127,5 +124,53 @@ function incrementTime() {
         ("0" + Math.trunc(time / 60)).slice(-2) +
         ":" + ("0" + (time % 60)).slice(-2);
 }
+
+function saveGame() {
+
+}
+
+document.getElementById("back-face1").addEventListener("click", function () {
+    document.getElementById("clicksfx").play();
+});
+
+document.getElementById("back-face2").addEventListener("click", function () {
+    document.getElementById("clicksfx").play();
+});
+
+document.getElementById("back-face3").addEventListener("click", function () {
+    document.getElementById("clicksfx").play();
+});
+document.getElementById("back-face4").addEventListener("click", function () {
+    document.getElementById("clicksfx").play();
+});
+document.getElementById("back-face5").addEventListener("click", function () {
+    document.getElementById("clicksfx").play();
+});
+document.getElementById("back-face6").addEventListener("click", function () {
+    document.getElementById("clicksfx").play();
+});
+document.getElementById("back-face7").addEventListener("click", function () {
+    document.getElementById("clicksfx").play();
+});
+document.getElementById("back-face8").addEventListener("click", function () {
+    document.getElementById("clicksfx").play();
+});
+document.getElementById("back-face9").addEventListener("click", function () {
+    document.getElementById("clicksfx").play();
+});
+document.getElementById("back-face10").addEventListener("click", function () {
+    document.getElementById("clicksfx").play();
+});
+document.getElementById("back-face11").addEventListener("click", function () {
+    document.getElementById("clicksfx").play();
+});
+document.getElementById("howdare").addEventListener("click", function () {
+    document.getElementById("howdareyou").play();
+});
+document.getElementById("howdare1").addEventListener("click", function () {
+    document.getElementById("howdareyou").play();
+});
+
+
 
 cards.forEach(card => card.addEventListener('click', flipCard));
