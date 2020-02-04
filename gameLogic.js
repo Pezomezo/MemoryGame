@@ -45,9 +45,13 @@ function checkForMatch() {
 
     if (firstCard.dataset.framework === secondCard.dataset.framework) {
         disableCards();
+        var audio = new Audio('youwin.m4a');
+        audio.play();
         winCheck++;
         console.log("So far: " + winCheck);
         if (winCheck === 6) {
+            var audio = new Audio('youwin.m4a');
+            audio.play();
             btn.click();
             return;
         }

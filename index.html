@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -8,89 +8,168 @@
   <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
+    <!--Music-->
+    <audio id="music" autoplay controls loop >
 
-<!-- The Modal -->
-<div id="myModal" class="modal">
 
-  <!-- Modal content -->
-  <div class="modal-content">
-    <div class="modal-header">
+        <source src="bgmusic.m4a" />
 
-      <h2>YOU WIN</h2>
+    </audio>
+   
+
+    <!--sound controller-->
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <div class="modal-header">
+
+                <h2>YOU WIN</h2>
+            </div>
+            <div class="modal-body">
+                <span class="close">Retry</span>
+            </div>
+        </div>
+
     </div>
-    <div class="modal-body">
-      <span class="close">Retry</span>
-    </div>
-  </div>
 
-</div>
-
-<!-- Trigger/Open The Modal -->
-<button id="myBtn" class="myBtn">Open Modal</button>
+    <!-- Trigger/Open The Modal -->
+    <button id="myBtn" class="myBtn">Open Modal</button>
 
 
-<section class="memory-game">
-  <div class="memory-card" data-framework="car">
-    <img class="front-face" src="img/Car-icon.png" alt="React">
-    <img class="back-face" src="img/meltingEarth.png" alt="Memory Card">
-  </div>
+    <section class="memory-game">
 
-  <div class="memory-card" data-framework="car">
-    <img class="front-face" src="img/Car-icon.png" alt="React">
-    <img class="back-face" src="img/meltingEarth.png" alt="Memory Card">
-  </div>
+        <div class="memory-card" data-framework="car">
+            <audio id="clicksfx">
+                <source src="clicksfx.m4a" />
+            </audio>
 
-  <div class="memory-card" data-framework="bear">
-    <img class="front-face" src="img/polarBear.jpeg" alt="Angular">
-    <img class="back-face" src="img/meltingEarth.png" alt="Memory Card">
-  </div>
+            <audio id="howdareyou">
+                <source src="howdare.m4a" />
+            </audio>
 
-  <div class="memory-card" data-framework="bear">
-    <img class="front-face" src="img/polarBear.jpeg" alt="Angular">
-    <img class="back-face" src="img/meltingEarth.png" alt="Memory Card">
-  </div>
+            <img class="front-face" src="img/Car-icon.png" alt="React">
 
-  <div class="memory-card" data-framework="greta" >
-    <img class="front-face" src="img/greta.jpg" alt="Ember">
-    <img class="back-face" src="img/meltingEarth.png" alt="Memory Card">
-  </div>
 
-  <div class="memory-card" data-framework="greta">
-    <img class="front-face" src="img/greta.jpg" alt="Ember">
-    <img class="back-face" src="img/meltingEarth.png" alt="Memory Card">
-  </div>
+            <img id="click" class="back-face" src="img/meltingEarth.png" alt="Memory Card">
 
-  <div class="memory-card" data-framework="ice">
-    <img class="front-face" src="img/meltingIceberg.png" alt="Vue">
-    <img class="back-face" src="img/meltingEarth.png" alt="Memory Card">
-  </div>
+        </div>
 
-  <div class="memory-card" data-framework="ice">
-    <img class="front-face" src="img/meltingIceberg.png" alt="Vue">
-    <img class="back-face" src="img/meltingEarth.png" alt="Memory Card">
-  </div>
+        <div class="memory-card" data-framework="car">
 
-  <div class="memory-card" data-framework="ozon">
-    <img class="front-face" src="img/ozonLayer.png" alt="Backbone">
-    <img class="back-face" src="img/meltingEarth.png" alt="Memory Card">
-  </div>
+            <img class="front-face" src="img/Car-icon.png" alt="React">
+            <img id="back-face1" class="back-face" src="img/meltingEarth.png" alt="Memory Card">
 
-  <div class="memory-card" data-framework="ozon">
-    <img class="front-face" src="img/ozonLayer.png" alt="Backbone">
-    <img class="back-face" src="img/meltingEarth.png" alt="Memory Card">
-  </div>
 
-  <div class="memory-card" data-framework="gas">
-    <img class="front-face" src="img/manufacture.gif" alt="Aurelia">
-    <img class="back-face" src="img/meltingEarth.png" alt="Memory Card">
-  </div>
+        </div>
 
-  <div class="memory-card" data-framework="gas">
-    <img class="front-face" src="img/manufacture.gif" alt="Aurelia">
-    <img class="back-face" src="img/meltingEarth.png" alt="Memory Card">
-  </div>
-</section>
+        <div class="memory-card" data-framework="bear">
+            <img class="front-face" src="img/polarBear.jpeg" alt="Angular">
+            <img id="back-face2" class="back-face" src="img/meltingEarth.png" alt="Memory Card">
+        </div>
 
-  <script src="./gameLogic.js"></script>
+        <div class="memory-card" data-framework="bear">
+            <img class="front-face" src="img/polarBear.jpeg" alt="Angular">
+            <img id="back-face3" class="back-face" src="img/meltingEarth.png" alt="Memory Card">
+        </div>
+
+        <div class="memory-card" data-framework="greta">
+            <img id="howdare" class="front-face" src="img/greta.jpg" alt="Ember">
+            <img id="back-face4" class="back-face" src="img/meltingEarth.png" alt="Memory Card">
+        </div>
+
+        <div class="memory-card" data-framework="greta">
+            <img class="front-face" id="howdare1" src="img/greta.jpg" alt="Ember">
+            <img id="back-face5" class="back-face" src="img/meltingEarth.png" alt="Memory Card">
+        </div>
+
+        <div class="memory-card" data-framework="ice">
+            <img class="front-face" src="img/meltingIceberg.png" alt="Vue">
+            <img id="back-face6" class="back-face" src="img/meltingEarth.png" alt="Memory Card">
+        </div>
+
+        <div class="memory-card" data-framework="ice">
+            <img class="front-face" src="img/meltingIceberg.png" alt="Vue">
+            <img id="back-face7" class="back-face" src="img/meltingEarth.png" alt="Memory Card">
+        </div>
+
+        <div class="memory-card" data-framework="ozon">
+            <img class="front-face" src="img/ozonLayer.png" alt="Backbone">
+            <img id="back-face8" class="back-face" src="img/meltingEarth.png" alt="Memory Card">
+        </div>
+
+        <div class="memory-card" data-framework="ozon">
+            <img class="front-face" src="img/ozonLayer.png" alt="Backbone">
+            <img id="back-face9" class="back-face" src="img/meltingEarth.png" alt="Memory Card">
+        </div>
+
+        <div class="memory-card" data-framework="gas">
+            <img class="front-face" src="img/manufacture.gif" alt="Aurelia">
+            <img id="back-face10" class="back-face" src="img/meltingEarth.png" alt="Memory Card">
+        </div>
+
+        <div class="memory-card" data-framework="gas">
+            <img class="front-face" src="img/manufacture.gif" alt="Aurelia">
+            <img id="back-face11" class="back-face" src="img/meltingEarth.png" alt="Memory Card">
+        </div>
+    </section>
+    <script>
+        document.getElementById("back-face1").addEventListener("click", function () {
+            document.getElementById("clicksfx").play();
+        });</script>
+    <script>
+        document.getElementById("back-face2").addEventListener("click", function () {
+            document.getElementById("clicksfx").play();
+        });</script>
+    <script>
+        document.getElementById("back-face3").addEventListener("click", function () {
+            document.getElementById("clicksfx").play();
+        });</script>
+    <script>
+        document.getElementById("back-face4").addEventListener("click", function () {
+            document.getElementById("clicksfx").play();
+        });</script>
+    <script>
+        document.getElementById("back-face5").addEventListener("click", function () {
+            document.getElementById("clicksfx").play();
+        });</script>
+    <script>
+        document.getElementById("back-face6").addEventListener("click", function () {
+            document.getElementById("clicksfx").play();
+        });</script>
+    <script>
+        document.getElementById("back-face7").addEventListener("click", function () {
+            document.getElementById("clicksfx").play();
+        });</script>
+    <script>
+        document.getElementById("back-face8").addEventListener("click", function () {
+            document.getElementById("clicksfx").play();
+        });</script>
+    <script>
+        document.getElementById("back-face9").addEventListener("click", function () {
+            document.getElementById("clicksfx").play();
+        });</script>
+    <script>
+        document.getElementById("back-face10").addEventListener("click", function () {
+            document.getElementById("clicksfx").play();
+        });</script>
+    <script>
+        document.getElementById("back-face11").addEventListener("click", function () {
+            document.getElementById("clicksfx").play();
+        });</script>
+
+    <script>
+        document.getElementById("howdare").addEventListener("click", function () {
+            document.getElementById("howdareyou").play();
+        });</script>
+
+    <script>
+        document.getElementById("howdare1").addEventListener("click", function () {
+            document.getElementById("howdareyou").play();
+        });</script>
+
+
+    <script src="./gameLogic.js"></script>
 </body>
 </html>
