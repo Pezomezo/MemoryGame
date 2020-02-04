@@ -18,13 +18,13 @@ body {
     flex-wrap: wrap;
 }
 
-.memory-card {
-    width: calc(25% - 10px);
-    height: calc(33.333% - 10px);
-    margin: 5px;
-    position: relative;
-    box-shadow: 1px 1px 1px rgba(0,0,0,.3);
-}
+.side-bar {
+    width: 250px;
+    height: 640px;
+    margin: auto;
+    display: block;
+    background: darkcyan;
+ }
 
 .front-face,
 .back-face {
@@ -143,4 +143,34 @@ body {
 
 .myBtn {
     display: none;
+}
+
+#stopWatch {
+    width: 280px;
+    height: auto;
+    text-align: center;
+    display: block;
+    padding: 5px;
+    margin: 0 auto;
+}
+#timer, #fulltime {
+    width: auto;
+    height: auto;
+    padding: 10px;
+    font-weight: bold;
+    display: block;
+    border: 1px solid #eee;
+    text-align: center;
+    box-shadow: 0 0 5px #ccc;
+    background: #fbfbf0;
+    color: darkblue;
+    border-bottom:4px solid darkgrey;
+}
+
+button { cursor: pointer; font-weight: 700; }
+
+#fulltime {
+    display:none;
+    font-size:16px;
+    font-weight:bold;
 }

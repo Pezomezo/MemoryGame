@@ -14,11 +14,18 @@ const span = document.getElementsByClassName("close")[0];
 let hasFlippedCard = false;
 let lockBoard = false;
 let winCheck = 0;
+let time, intervalId;
 let firstCard, secondCard;
-
+let firstCardFlipped = false;
 
 function flipCard() {
+    if (!firstCardFlipped) {
+        time = -1;
+        incrementTime();
+        intervalId = setInterval(incrementTime, 1000);
 
+        firstCardFlipped = true;
+    }
     if (lockBoard) {
         return;
     }
@@ -45,9 +52,19 @@ function checkForMatch() {
 
     if (firstCard.dataset.framework === secondCard.dataset.framework) {
         disableCards();
+        var audio = new Audio('youwin.m4a');
+        audio.play();
         winCheck++;
         console.log("So far: " + winCheck);
         if (winCheck === 6) {
+
+            var audio = new Audio('youwin.m4a');
+            audio.play();
+
+            clearInterval(intervalId);
+            document.getElementById("resultDiv").textContent =
+                document.getElementById("time").textContent;
+
             btn.click();
             return;
         }
@@ -56,7 +73,6 @@ function checkForMatch() {
 
     unflipCards();
 }
-
 
 function disableCards() {
     firstCard.removeEventListener('click', flipCard);
@@ -99,5 +115,62 @@ span.onclick = function() {
     modal.style.display = "none";
     location.reload();
 };
+
+
+//Stop Watch logic
+function incrementTime() {
+    time++;
+    document.getElementById("time").textContent =
+        ("0" + Math.trunc(time / 60)).slice(-2) +
+        ":" + ("0" + (time % 60)).slice(-2);
+}
+
+function saveGame() {
+
+}
+
+document.getElementById("back-face1").addEventListener("click", function () {
+    document.getElementById("clicksfx").play();
+});
+
+document.getElementById("back-face2").addEventListener("click", function () {
+    document.getElementById("clicksfx").play();
+});
+
+document.getElementById("back-face3").addEventListener("click", function () {
+    document.getElementById("clicksfx").play();
+});
+document.getElementById("back-face4").addEventListener("click", function () {
+    document.getElementById("clicksfx").play();
+});
+document.getElementById("back-face5").addEventListener("click", function () {
+    document.getElementById("clicksfx").play();
+});
+document.getElementById("back-face6").addEventListener("click", function () {
+    document.getElementById("clicksfx").play();
+});
+document.getElementById("back-face7").addEventListener("click", function () {
+    document.getElementById("clicksfx").play();
+});
+document.getElementById("back-face8").addEventListener("click", function () {
+    document.getElementById("clicksfx").play();
+});
+document.getElementById("back-face9").addEventListener("click", function () {
+    document.getElementById("clicksfx").play();
+});
+document.getElementById("back-face10").addEventListener("click", function () {
+    document.getElementById("clicksfx").play();
+});
+document.getElementById("back-face11").addEventListener("click", function () {
+    document.getElementById("clicksfx").play();
+});
+document.getElementById("howdare").addEventListener("click", function () {
+    document.getElementById("howdareyou").play();
+});
+document.getElementById("howdare1").addEventListener("click", function () {
+    document.getElementById("howdareyou").play();
+});
+
+
 
 cards.forEach(card => card.addEventListener('click', flipCard));
