@@ -15,7 +15,7 @@ let hasFlippedCard = false;
 let lockBoard = false;
 let winCheck = 0;
 let firstCard, secondCard;
-
+//comment
 
 function flipCard() {
 
