@@ -9,12 +9,12 @@
 </head>
 <body>
     <!--Music-->
-    <audio id="music" autoplay controls loop >
+    <div>
+        <audio id="music" autoplay controls loop >
+            <source src="bgmusic.m4a" />
+        </audio>
+    </div>
 
-
-        <source src="bgmusic.m4a" />
-
-    </audio>
    
 
     <!--sound controller-->
@@ -38,6 +38,11 @@
     <!-- Trigger/Open The Modal -->
     <button id="myBtn" class="myBtn">Open Modal</button>
 
+    <section id="scoreBar" class="scoreBar">
+            <div class="scoreHeader">SCORES:</div>
+            <ol id="ScoreList" style=" text-align: center; font-size: 2em; margin-bottom: 0">
+            </ol>
+    </section>
 
     <section class="memory-game">
 
@@ -118,16 +123,13 @@
 
     <section class="side-bar">
 
-        <div id="time" style="border: 3px solid #fbfdff; text-align: center;font-size: 2em; margin-bottom: 0">00:00</div>
+        <div id="time" style="border: 3px solid #fbfdff; text-align: center;font-size: 2em; font-family: 'Arial Black'; margin-bottom: 0">00:00</div>
         <div class="side-bar-image" data-framework="background">
             <img class="side-bar-image" src="img/Clima%20crisis%20background%20copy.png">
         </div>
 
     </section>
-    <section id="scoreBar" class="scoreBar">
-        <ul id="ScoreList" style=" text-align: center; font-size: 2em; margin-bottom: 0">
-        </ul>
-    </section>
+
 
   <script src="./gameLogic.js"></script>
 

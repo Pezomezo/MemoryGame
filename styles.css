@@ -219,7 +219,6 @@ text-align: center;
 }
 
 
-
 .close:hover,
 .close:focus {
     color: #000;
@@ -273,4 +272,25 @@ button { cursor: pointer; font-weight: 700; }
     display:none;
     font-size:16px;
     font-weight:bold;
+}
+
+.scoreBar {
+    position: absolute;
+    margin-top: 150px;
+    left: 90px;
+}
+
+.scoreHeader {
+    color: white;
+    font-family: "Arial Black";
+    font-size: 40px;
+    margin-top: -55px;
+    position: absolute;
+    padding-bottom: 15px;
+    text-align: left;
+    margin-left: -50px;
+}
+
+li {
+    color: white;
 }
