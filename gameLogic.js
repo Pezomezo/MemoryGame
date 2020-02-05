@@ -64,7 +64,7 @@ function checkForMatch() {
             audio.play();
 
             clearInterval(intervalId);
-            document.getElementById("resultDiv").textContent =
+            document.getElementById("resultDiv").textContent = "Your score is: " +
                 presentationTime(document.getElementById("time").textContent);
 
 

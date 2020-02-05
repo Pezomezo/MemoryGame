@@ -32,6 +32,20 @@ body {
     margin: auto;
 }
 
+h2{
+    text-align: center;
+    font-size: 45px;
+}
+.modal-body{
+    font-size: 36px;
+    text-align: center;
+    text-decoration: none;
+}
+#resultDiv{
+    margin-bottom: 30px;
+    margin-top: 30px;
+text-align: center;
+}
 .front-face,
 .back-face {
     width: 100%;
@@ -120,11 +134,91 @@ body {
 
 /* The Close Button */
 .close {
-    color: blue;
-    /*float: right;*/
-    font-size: 28px;
-    font-weight: bold;
+    -webkit-animation: color-change 1s infinite;
+    -moz-animation: color-change 1s infinite;
+    -o-animation: color-change 1s infinite;
+    -ms-animation: color-change 1s infinite;
+    animation: color-change 1s infinite;
+    text-decoration: none;
 }
+
+@-webkit-keyframes color-change {
+    0% {
+        color: yellow;
+    }
+
+    50% {
+        color: yellow;
+    }
+
+    100% {
+        color: red;
+    }
+}
+
+@-moz-keyframes color-change {
+    0% {
+        color: red;
+    }
+
+    50% {
+        color: yellow;
+    }
+
+    100% {
+        color: red;
+    }
+}
+
+@-ms-keyframes color-change {
+    0% {
+        color: red;
+    }
+
+    50% {
+        color: yellow;
+    }
+
+    100% {
+        color: red;
+    }
+}
+
+@-o-keyframes color-change {
+    0% {
+        color: red;
+    }
+
+    50% {
+        color: yellow;
+    }
+
+    100% {
+        color: red;
+    }
+    50% {
+        color: yellow;
+    }
+    0% {
+        color: red;
+    }
+}
+
+@keyframes color-change {
+    0% {
+        color: red;
+    }
+
+    50% {
+        color: yellow;
+    }
+
+    100% {
+        color: red;
+    }
+}
+
+
 
 .close:hover,
 .close:focus {
