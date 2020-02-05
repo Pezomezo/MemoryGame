@@ -7,7 +7,7 @@
 body {
     height: 100vh;
     display: flex;
-    background: #9ea7b2;
+    background: #29658d;
 }
 
 .memory-game {
@@ -23,9 +23,29 @@ body {
     height: 640px;
     margin: auto;
     display: block;
-    background: darkcyan;
+    background: whitesmoke;
  }
 
+.side-bar-image {
+    width: 265px;
+    height: 598px;
+    margin: auto;
+}
+
+h2{
+    text-align: center;
+    font-size: 45px;
+}
+.modal-body{
+    font-size: 36px;
+    text-align: center;
+    text-decoration: none;
+}
+#resultDiv{
+    margin-bottom: 30px;
+    margin-top: 30px;
+text-align: center;
+}
 .front-face,
 .back-face {
     width: 100%;
@@ -33,7 +53,7 @@ body {
     padding: 20px;
     position: absolute;
     border-radius: 5px;
-    background: #1C7CCC;
+    background: rgb(98, 145, 182);
     backface-visibility: hidden;
 }
 
@@ -114,11 +134,90 @@ body {
 
 /* The Close Button */
 .close {
-    color: blue;
-    /*float: right;*/
-    font-size: 28px;
-    font-weight: bold;
+    -webkit-animation: color-change 1s infinite;
+    -moz-animation: color-change 1s infinite;
+    -o-animation: color-change 1s infinite;
+    -ms-animation: color-change 1s infinite;
+    animation: color-change 1s infinite;
+    text-decoration: none;
 }
+
+@-webkit-keyframes color-change {
+    0% {
+        color: yellow;
+    }
+
+    50% {
+        color: yellow;
+    }
+
+    100% {
+        color: red;
+    }
+}
+
+@-moz-keyframes color-change {
+    0% {
+        color: red;
+    }
+
+    50% {
+        color: yellow;
+    }
+
+    100% {
+        color: red;
+    }
+}
+
+@-ms-keyframes color-change {
+    0% {
+        color: red;
+    }
+
+    50% {
+        color: yellow;
+    }
+
+    100% {
+        color: red;
+    }
+}
+
+@-o-keyframes color-change {
+    0% {
+        color: red;
+    }
+
+    50% {
+        color: yellow;
+    }
+
+    100% {
+        color: red;
+    }
+    50% {
+        color: yellow;
+    }
+    0% {
+        color: red;
+    }
+}
+
+@keyframes color-change {
+    0% {
+        color: red;
+    }
+
+    50% {
+        color: yellow;
+    }
+
+    100% {
+        color: red;
+    }
+}
+
 
 .close:hover,
 .close:focus {
@@ -129,7 +228,7 @@ body {
 
 .modal-header {
     padding: 2px 16px;
-    background-color: #5cb85c;
+    background-color: #0074a3;
     color: white;
 }
 
@@ -137,7 +236,7 @@ body {
 
 .modal-footer {
     padding: 2px 16px;
-    background-color: #5cb85c;
+    background-color: #0074a3;
     color: white;
 }
 
@@ -163,7 +262,7 @@ body {
     text-align: center;
     box-shadow: 0 0 5px #ccc;
     background: #fbfbf0;
-    color: darkblue;
+    color: white;
     border-bottom:4px solid darkgrey;
 }
 
@@ -173,4 +272,25 @@ button { cursor: pointer; font-weight: 700; }
     display:none;
     font-size:16px;
     font-weight:bold;
+}
+
+.scoreBar {
+    position: absolute;
+    margin-top: 150px;
+    left: 90px;
+}
+
+.scoreHeader {
+    color: white;
+    font-family: "Arial Black";
+    font-size: 40px;
+    margin-top: -55px;
+    position: absolute;
+    padding-bottom: 15px;
+    text-align: left;
+    margin-left: -50px;
+}
+
+li {
+    color: white;
 }
