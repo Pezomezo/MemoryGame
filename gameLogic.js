@@ -112,6 +112,7 @@ function resetBoard() {
     [firstCard, secondCard] = [null, null];
 }
 
+// Logic to shuffle cards
 (function shuffle() {
     //localStorage.clear();
     cards.forEach(card => {
