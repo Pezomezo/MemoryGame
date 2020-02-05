@@ -10,13 +10,18 @@ var btn = document.getElementById("myBtn");
 // Get the <span> element that closes the modal
 const span = document.getElementsByClassName("close")[0];
 
+const dynamicList = document.getElementById("ScoreList");
+
+
 // Instance variables
 let hasFlippedCard = false;
 let lockBoard = false;
 let winCheck = 0;
+let scoreIndex = 1;
 let time, intervalId;
 let firstCard, secondCard;
 let firstCardFlipped = false;
+
 
 function flipCard() {
     if (!firstCardFlipped) {
@@ -49,21 +54,21 @@ function flipCard() {
 }
 
 function checkForMatch() {
-
+    const audio = new Audio('youwin.m4a');
     if (firstCard.dataset.framework === secondCard.dataset.framework) {
         disableCards();
-        var audio = new Audio('youwin.m4a');
         audio.play();
         winCheck++;
-        console.log("So far: " + winCheck);
         if (winCheck === 6) {
 
-            var audio = new Audio('youwin.m4a');
             audio.play();
 
             clearInterval(intervalId);
-            document.getElementById("resultDiv").textContent =
-                document.getElementById("time").textContent;
+            document.getElementById("resultDiv").textContent = "Your score is: " +
+                presentationTime(document.getElementById("time").textContent);
+
+
+            saveGame(document.getElementById("time").textContent);
 
             btn.click();
             return;
@@ -72,6 +77,15 @@ function checkForMatch() {
     }
 
     unflipCards();
+}
+
+function presentationTime(score) {
+    let array = score.toString().split(":");
+    if (array[0] === "00") {
+        return array[1] + " sec"
+    } else {
+        return score;
+    }
 }
 
 function disableCards() {
@@ -98,12 +112,56 @@ function resetBoard() {
     [firstCard, secondCard] = [null, null];
 }
 
+// Logic to shuffle cards
 (function shuffle() {
+    //localStorage.clear();
     cards.forEach(card => {
         let ramdomPos = Math.floor(Math.random() * 12);
         card.style.order = ramdomPos;
     });
 })();
+
+//Prints out the scores to the main screen
+(function showScores() {
+    if (localStorage.length !== 0) {
+        let scores = [];
+        for (let i = 1; i < localStorage.length+1; i++) {
+            console.log("We are here: " + localStorage.getItem(i.toString()));
+            scores.push(localStorage.getItem(i.toString()));
+            const li = document.createElement("li");
+            li.setAttribute("id", localStorage.getItem(i.toString()).toString() + " sec");
+            li.appendChild(document.createTextNode(localStorage.getItem(i.toString()).toString() + " sec"));
+            dynamicList.appendChild(li);
+        }
+    }
+})();
+
+// sorts the list from small numbers to bigger numbers
+function sortScores(scores) {
+    let sortedScores = [];
+    scores.forEach(value => {
+        sortedScores.push(convertScore(value));
+    });
+
+    sortedScores = sortedScores.sort((a, b) => a - b);
+    return convertBackToTime(sortedScores);
+}
+
+// Converts int back to time so it can be presented
+function convertBackToTime(scores) {
+    let sortedScoreTimes = [];
+    scores.forEach(value =>  {
+        let date = new Date(value*1000);
+        sortedScoreTimes.push(date.toString().split(" ")[4].substring(3,8));
+    });
+    return sortedScoreTimes;
+}
+
+// Converts time to int so it can be sorted
+function convertScore(score) {
+    const array = score.split(":");
+    return ((parseInt(array[0], 10) * 60) + parseInt(array[1], 10));
+}
 
 // When the user clicks the button, open the modal
 btn.onclick = function() {
@@ -125,7 +183,22 @@ function incrementTime() {
         ":" + ("0" + (time % 60)).slice(-2);
 }
 
-function saveGame() {
+// Saves the new time Score
+function saveGame(time) {
+    let maxLength = 3;
+    if (localStorage.length === 0 || localStorage.length !== maxLength) {
+        let index = (localStorage.length+1).toString();
+        localStorage.setItem(index, time);
+        console.log("index: " + index + ", item: " + time);
+    }
+    for (let i = 1; i < localStorage.length+1; i++) {
+        console.log("Are we here somehow?   " + localStorage.getItem(i.toString()));
+        let bestScore = localStorage.getItem(i.toString());
+        if (time < bestScore || time === bestScore) {
+            localStorage.setItem(i.toString(),time);
+            return;
+        }
+    }
 
 }
 
