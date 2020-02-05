@@ -27,7 +27,7 @@ body {
  }
 
 .side-bar-image {
-    width: 250px;
+    width: 265px;
     height: 598px;
     margin: auto;
 }
@@ -169,7 +169,7 @@ body {
     text-align: center;
     box-shadow: 0 0 5px #ccc;
     background: #fbfbf0;
-    color: darkblue;
+    color: white;
     border-bottom:4px solid darkgrey;
 }
 
